@@ -1,6 +1,6 @@
 import { defineType, defineField } from 'sanity';
 
-export default blockContent = defineType({
+export default defineType({
     name: "blockContent",
     type: "array",
     title: "Block Content",

@@ -1,6 +1,6 @@
 import { defineType, defineField } from 'sanity';
 
-export default mainImage = defineType({
+export default defineType({
     name: "mainImage",
     type: "image",
     options: {

@@ -1,6 +1,6 @@
 import { defineType, defineField } from "sanity";
 
-export default blog = defineType({
+export default defineType({
   name: "blog",
   type: "document",
   title: "Blog",
