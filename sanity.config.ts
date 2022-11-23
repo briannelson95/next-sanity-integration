@@ -6,6 +6,10 @@ import { deskTool } from 'sanity/desk'
 import blockContent from './schemas/objects/blockContent';
 import mainImage from './schemas/objects/mainImage';
 import blog from './schemas/documents/blog'
+import author from 'schemas/documents/author';
+import settings from 'schemas/documents/settings';
+import { settingsStructure } from 'plugins/settings';
+import { previewDocumentNode } from 'plugins/previewPane';
 
 
 const title =
@@ -23,11 +27,15 @@ export default defineConfig({
             blockContent,
             mainImage,
             blog,
+            author,
+            settings,
         ]
     },
     plugins: [
         deskTool({
             /* this is where desk structure goes */
+            structure: settingsStructure(settings),
+            defaultDocumentNode: previewDocumentNode({ apiVersion, previewSecretId }),
         })
         /* all other plugins here */
     ]
